@@ -1,0 +1,2 @@
+module BatchItemRecordsHelper
+end

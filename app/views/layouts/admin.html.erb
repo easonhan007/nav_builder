@@ -1,0 +1,18 @@
+<% content_for :admin do %>		
+	<div class="grid grid-cols-12 min-w-full">
+	  <div class="col-span-12 md:col-span-10">
+		  <%= yield %>
+	  </div>
+	  <div id="right_menu" class="md:col-span-2 col-span-12">
+	  	<nav class="ml-5">
+		  	<ul class="flex flex-col items-start list-none">
+				<li> <%= link_to :Pages, pages_path, class: "text-blue-500 text-lg font-medium" %> </li>	
+				<li> <%= link_to :Sections, sections_path, class: "text-blue-500 text-lg font-medium" %> </li>	
+				<li> <%= link_to :Items, items_path, class: "text-blue-500 text-lg font-medium" %> </li>	
+				<li> <%= link_to 'Batch create items', batch_item_records_path, class: "text-blue-500 text-lg font-medium" %> </li>	
+			</ul>
+		</nav>
+	  </div>
+	</div>
+<% end %>
+<%= render template: "layouts/application" %>

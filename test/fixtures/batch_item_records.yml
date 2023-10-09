@@ -1,0 +1,18 @@
+# == Schema Information
+#
+# Table name: batch_item_records
+#
+#  id         :integer          not null, primary key
+#  section_id :integer          not null
+#  content    :text
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+one:
+  section: one
+  content: MyText
+
+two:
+  section: two
+  content: MyText

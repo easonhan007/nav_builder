@@ -1,0 +1,26 @@
+<div id="<%= dom_id batch_item_record %>">
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Section:</strong>
+    <%= batch_item_record.section_id %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Content:</strong>
+    <div class="prose lg:prose-lg">
+      <%= simple_format batch_item_record.content %>
+    </div>
+  </p>
+
+  <div class="my-5">
+    <strong class="block font-medium mb-1">Log:</strong>
+    <section class="prose lg:prose-lg">
+      <%= simple_format batch_item_record.log %> 
+    </section>
+  </div>
+
+  <% if action_name != "show" %>
+    <%= link_to "Show this batch item record", batch_item_record, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to 'Edit this batch item record', edit_batch_item_record_path(batch_item_record), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <hr class="mt-6">
+  <% end %>
+</div>
