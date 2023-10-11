@@ -15,8 +15,9 @@
     <header>
       <%= render 'shared/nav'%>
     </header>
-    <main class="container mx-auto mt-5 px-5 flex">
+    <main class="container mx-auto mt-5 px-5 flex min-h-screen">
       <%= content_for?(:admin)? yield(:admin) : yield %>
     </main>
+    <%= render 'shared/footer'%>
   </body>
 </html>
