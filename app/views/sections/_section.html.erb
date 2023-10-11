@@ -11,7 +11,7 @@
       <%= link_to "Show", section, class: "rounded py-3 px-3 bg-gray-100 inline-block font-medium text-sm" %>
       <%= link_to 'Edit', edit_section_path(section), class: "rounded py-3 ml-2 px-3 bg-gray-100 inline-block font-medium text-sm" %>
       <%= link_to 'New Item', new_item_path(section_id:section.id), class: "text-white rounded py-3 ml-2 px-3 bg-blue-600 inline-block font-medium text-sm" %>
-      <%= link_to 'Bulk New Items', new_batch_item_record_path(page_id:section.id), class: "text-white rounded py-3 ml-2 px-3 bg-green-600 inline-block font-medium text-sm" %>
+      <%= link_to 'Bulk New Items', new_batch_item_record_path(section_id:section.id), class: "text-white rounded py-3 ml-2 px-3 bg-green-600 inline-block font-medium text-sm" %>
     <% end %>
   </div>
 </div>
