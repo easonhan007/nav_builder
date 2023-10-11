@@ -6,7 +6,7 @@ class BatchItemRecordsController < ApplicationController
 
   # GET /batch_item_records or /batch_item_records.json
   def index
-    @batch_item_records = BatchItemRecord.all
+    @pagy, @batch_item_records = pagy BatchItemRecord.order('created_at DESC')
   end
 
   # GET /batch_item_records/1 or /batch_item_records/1.json

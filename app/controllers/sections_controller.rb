@@ -6,7 +6,13 @@ class SectionsController < ApplicationController
 
   # GET /sections or /sections.json
   def index
-    @sections = Section.all
+    if params[:page_id]
+      page = Page.find(params[:page_id])
+      @sections = page.sections.order('position ASC, created_at DESC')
+      @page_title = page.title
+    else
+      @pagy, @sections = pagy Section.order('created_at DESC')
+    end
   end
 
   # GET /sections/1 or /sections/1.json
@@ -16,6 +22,12 @@ class SectionsController < ApplicationController
   # GET /sections/new
   def new
     @section = Section.new
+
+    if params[:page_id]
+      page = Page.find(params[:page_id])
+      @section.page = page
+    end
+      
   end
 
   # GET /sections/1/edit

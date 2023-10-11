@@ -6,7 +6,7 @@ class PagesController < ApplicationController
 
   # GET /pages or /pages.json
   def index
-    @pages = Page.all
+    @pages = Page.order('position ASC, created_at DESC')
   end
 
   # GET /pages/1 or /pages/1.json
@@ -30,6 +30,7 @@ class PagesController < ApplicationController
       if @page.save
         format.html { redirect_to page_url(@page), notice: "Page was successfully created." }
         format.json { render :show, status: :created, location: @page }
+        @page.notify_all_pages_to_update_nav
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @page.errors, status: :unprocessable_entity }
@@ -53,6 +54,7 @@ class PagesController < ApplicationController
   # DELETE /pages/1 or /pages/1.json
   def destroy
     @page.destroy!
+    @page.notify_all_pages_to_update_nav
 
     respond_to do |format|
       format.html { redirect_to pages_url, notice: "Page was successfully destroyed." }

@@ -13,7 +13,7 @@
 
   <div class="my-5">
     <%= form.label :section %>
-    <%= form.collection_select :section_id, Section.order('created_at DESC'), :id, :title, {}, class: 'rounded-md block shadow border border-gray-200 outline-none px-3 py-2 mt-2 w-full'%>
+    <%= form.collection_select :section_id, Section.order('created_at DESC'), :id, :with_page, {}, class: 'rounded-md block shadow border border-gray-200 outline-none px-3 py-2 mt-2 w-full'%>
   </div>
 
   <div class="my-5">

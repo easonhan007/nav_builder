@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_10_09_101145) do
+ActiveRecord::Schema[7.1].define(version: 2023_10_11_032342) do
   create_table "batch_item_records", force: :cascade do |t|
     t.integer "section_id", null: false
     t.text "content"
@@ -18,6 +18,15 @@ ActiveRecord::Schema[7.1].define(version: 2023_10_09_101145) do
     t.datetime "updated_at", null: false
     t.text "log"
     t.index ["section_id"], name: "index_batch_item_records_on_section_id"
+  end
+
+  create_table "batch_section_records", force: :cascade do |t|
+    t.integer "page_id", null: false
+    t.text "content"
+    t.text "log"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["page_id"], name: "index_batch_section_records_on_page_id"
   end
 
   create_table "items", force: :cascade do |t|
@@ -37,6 +46,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_10_09_101145) do
     t.integer "position", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "need_persistence", default: true
   end
 
   create_table "sections", force: :cascade do |t|
@@ -61,6 +71,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_10_09_101145) do
   end
 
   add_foreign_key "batch_item_records", "sections"
+  add_foreign_key "batch_section_records", "pages"
   add_foreign_key "items", "sections"
   add_foreign_key "sections", "pages"
 end

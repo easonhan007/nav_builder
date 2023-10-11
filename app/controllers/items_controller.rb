@@ -6,7 +6,13 @@ class ItemsController < ApplicationController
 
   # GET /items or /items.json
   def index
-    @items = Item.all
+    if params[:section_id]
+      section = Section.find(params[:section_id])
+      @items = section.items.order('position ASC, created_at DESC')
+      @section_title = section.with_page
+    else
+      @pagy, @items = pagy Item.order('created_at DESC')
+    end
   end
 
   # GET /items/1 or /items/1.json

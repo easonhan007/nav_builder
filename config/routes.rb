@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :batch_section_records
   get 'home/index'
   get 'p/:slug', to: 'home#index'
 

@@ -63,6 +63,7 @@ group :development do
   # gem "spring"
 
   gem "error_highlight", ">= 0.4.0", platforms: [:ruby]
+  gem "annotate", "~> 3.2"
 end
 
 group :test do
@@ -72,6 +73,7 @@ group :test do
 end
 
 gem "devise", "~> 4.9"
-gem "annotate", "~> 3.2"
+gem 'pagy', '~> 6.1' 
+
 gem 'redcarpet'
 gem 'nokogiri'

@@ -13,3 +13,9 @@
  *= require_tree .
  *= require_self
  */
+
+ @import "~tailwindcss/base"; 
+/* 
+   Add the following markup AFTER your import statements
+   Notice: this style contains only the rules for pagy-nav
+*/

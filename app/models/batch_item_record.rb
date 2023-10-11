@@ -7,6 +7,7 @@
 #  content    :text
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  log        :text
 #
 class BatchItemRecord < ApplicationRecord
   belongs_to :section
@@ -22,7 +23,7 @@ class BatchItemRecord < ApplicationRecord
     unless self.log 
       self.log = ""
     end 
-    Rails.logger.info("start parsing the content")
+    Rails.logger.info("Batch Items: start parsing the content")
     markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, {})
     html = markdown.render(content)
     # Rails.logger.info(html)

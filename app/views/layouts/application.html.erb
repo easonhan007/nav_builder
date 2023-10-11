@@ -12,7 +12,10 @@
   </head>
 
   <body>
-    <main class="container mx-auto mt-28 px-5 flex">
+    <header>
+      <%= render 'shared/nav'%>
+    </header>
+    <main class="container mx-auto mt-5 px-5 flex">
       <%= content_for?(:admin)? yield(:admin) : yield %>
     </main>
   </body>

@@ -1,17 +1,17 @@
 # == Schema Information
 #
-# Table name: batch_item_records
+# Table name: batch_section_records
 #
 #  id         :integer          not null, primary key
-#  section_id :integer          not null
+#  page_id    :integer          not null
 #  content    :text
+#  log        :text
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  log        :text
 #
 require "test_helper"
 
-class BatchItemRecordTest < ActiveSupport::TestCase
+class BatchSectionRecordTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

@@ -1,19 +1,21 @@
 # == Schema Information
 #
-# Table name: batch_item_records
+# Table name: batch_section_records
 #
 #  id         :integer          not null, primary key
-#  section_id :integer          not null
+#  page_id    :integer          not null
 #  content    :text
+#  log        :text
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  log        :text
 #
 
 one:
-  section: one
+  page: one
   content: MyText
+  log: MyText
 
 two:
-  section: two
+  page: two
   content: MyText
+  log: MyText

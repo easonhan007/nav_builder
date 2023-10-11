@@ -4,12 +4,12 @@
   <% end %>
 
   <div class="flex justify-between items-center">
-    <h1 class="font-bold text-4xl">Batch item records</h1>
-    <%= link_to 'New batch item record', new_batch_item_record_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
+    <h1 class="font-bold text-4xl">Batch section records</h1>
+    <%= link_to 'New batch section record', new_batch_section_record_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
   </div>
 
-  <div id="batch_item_records" class="min-w-full">
-    <%= render @batch_item_records %>
+  <div id="batch_section_records" class="min-w-full">
+    <%= render @batch_section_records %>
     <div class="my-4">
       <%== pagy_nav @pagy %>
     </div>

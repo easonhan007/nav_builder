@@ -12,6 +12,14 @@
 #  updated_at  :datetime         not null
 #
 class Item < ApplicationRecord
+	include PagePersistenceNotification
+
 	belongs_to :section
 	validates :link_name, :link_href, presence: true
+
+	delegate :page, to: :section
+
+	after_commit :notify_to_persist
+
+
 end

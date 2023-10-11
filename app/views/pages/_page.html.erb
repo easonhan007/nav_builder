@@ -1,22 +1,15 @@
-<div id="<%= dom_id page %>">
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Title:</strong>
-    <%= page.title %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Slug:</strong>
-    <%= page.slug %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Position:</strong>
-    <%= page.position %>
-  </p>
-
-  <% if action_name != "show" %>
-    <%= link_to "Show this page", page, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <%= link_to 'Edit this page', edit_page_path(page), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
-    <hr class="mt-6">
-  <% end %>
+<div class="flex w-full flex-col my-5">
+  <h3 class="text-lg text-gray-800 my-2"><%= page.title%>
+    <small class="text-sm text-slate-500 mb-2"><%= page.slug%></small>
+  </h3>
+  <p class="mb-2 text-sm">Position: <%= page.position %></p>
+  <p class="mb-2 text-sm">Sections: <%= link_to page.sections.count, sections_path(page_id: page.id), class: 'text-blue-500 hover:underline' %></p>
+  <div class="flex flex-row items-center">
+    <% if action_name != "show" %>
+      <%= link_to "Show", page, class: "rounded py-3 px-3 bg-gray-100 inline-block font-medium text-sm" %>
+      <%= link_to 'Edit', edit_page_path(page), class: "rounded py-3 ml-2 px-3 bg-gray-100 inline-block font-medium text-sm" %>
+      <%= link_to 'New Section', new_section_path(page_id:page.id), class: "text-white rounded py-3 ml-2 px-3 bg-blue-600 inline-block font-medium text-sm" %>
+      <%= link_to 'Bulk New Sections', new_batch_section_record_path(page_id:page.id), class: "text-white rounded py-3 ml-2 px-3 bg-green-600 inline-block font-medium text-sm" %>
+    <% end %>
+  </div>
 </div>

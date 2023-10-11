@@ -1,0 +1,25 @@
+<div id="<%= dom_id batch_section_record %>">
+  <p class="my-5 font-medium text-2xl">
+    <%= batch_section_record.page.title %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Content:</strong>
+    <div class="prose lg:prose-lg">
+      <%= simple_format batch_section_record.content %>
+    </div>
+  </p>
+
+  <div class="my-5">
+    <strong class="block font-medium mb-1">Log:</strong>
+    <section class="prose lg:prose-lg">
+      <%= simple_format batch_section_record.log %> 
+    </section>
+  </div>
+
+  <% if action_name != "show" %>
+    <%= link_to "Show this batch section record", batch_section_record, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to 'Edit this batch section record', edit_batch_section_record_path(batch_section_record), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <hr class="mt-6">
+  <% end %>
+</div>

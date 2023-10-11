@@ -10,12 +10,16 @@
 #  updated_at :datetime         not null
 #
 class Section < ApplicationRecord
+	include PagePersistenceNotification
+
   belongs_to :page
   has_many :items
 
   validates :title, presence: true
 
+	after_commit :notify_to_persist
+
   def with_page  
-    "#{page.title}-#{title}"
+    "#{page.title} : #{title}"
   end
 end

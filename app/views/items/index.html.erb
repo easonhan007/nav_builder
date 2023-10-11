@@ -4,11 +4,18 @@
   <% end %>
 
   <div class="flex justify-between items-center">
-    <h1 class="font-bold text-4xl">Items</h1>
+    <h1 class="font-bold text-4xl"><%= @section_title || 'Items'%></h1>
     <%= link_to 'New item', new_item_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
   </div>
 
   <div id="items" class="min-w-full">
     <%= render @items %>
+    
+    <% if @pagy %>
+      <div class="my-4">
+        <%== pagy_nav(@pagy) %>
+      </div>
+    <% end %>
+    
   </div>
 </div>
