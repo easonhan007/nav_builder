@@ -16,6 +16,10 @@ class BatchItemRecordsController < ApplicationController
   # GET /batch_item_records/new
   def new
     @batch_item_record = BatchItemRecord.new
+    if params[:section_id]
+      section = Section.find(params[:section_id])
+      @batch_item_record.section = section
+    end #if
   end
 
   # GET /batch_item_records/1/edit

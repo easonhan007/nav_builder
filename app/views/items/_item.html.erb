@@ -3,6 +3,7 @@
     <small class="text-sm text-blue-500 mb-2 hover:underline"><%= link_to item.section.title, item.section %></small>
   </h3>
   <p class="mb-2 text-sm">Position: <%= item.position %></p>
+  <p class="mb-2 text-sm">Description: <%= item.description %></p>
   <div class="flex flex-row items-center">
     <% if action_name != "show" %>
       <%= link_to "Show", item, class: "rounded py-3 px-3 bg-gray-100 inline-block font-medium text-sm" %>

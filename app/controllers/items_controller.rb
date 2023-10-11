@@ -22,6 +22,10 @@ class ItemsController < ApplicationController
   # GET /items/new
   def new
     @item = Item.new
+    if params[:section_id]
+      section = Section.find(params[:section_id])
+      @item.section = section
+    end #if
   end
 
   # GET /items/1/edit
