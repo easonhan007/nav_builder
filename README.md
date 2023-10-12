@@ -43,3 +43,4 @@ docker run -d --rm -p 12306:3000 -v ./storage:/rails/storage --name nav_builder 
 - Fix section destroy issue
 - Custom js code per page
 - Dark mode
+- Better navigation after creating sections and items 
