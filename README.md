@@ -36,3 +36,10 @@ docker build . -t nav_builder
 docker stop nav_builder
 docker run -d --rm -p 12306:3000 -v ./storage:/rails/storage --name nav_builder nav_builder:latest
 ```
+
+### TODO
+
+- A mobile friendly top nav
+- Fix section destroy issue
+- Custom js code per page
+- Dark mode
