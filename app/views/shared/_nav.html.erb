@@ -1,7 +1,7 @@
 <nav class="bg-slate-800 text-gray-100">
 <ul class="list-none flex justify-start container mx-auto px-5 gap-4">
 	<% @nav_items.each do |nav| %>
-	<li class="py-1 hover:underline">
+	<li class="py-2 hover:underline text-lg">
 		<%= link_to nav.title, "/p/#{nav.slug}"%>	
 	</li>
 	<% end %>

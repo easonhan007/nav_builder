@@ -22,4 +22,5 @@ class Section < ApplicationRecord
   def with_page  
     "#{page.title} : #{title}"
   end
+
 end

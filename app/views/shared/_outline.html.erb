@@ -1,0 +1,11 @@
+<div class="px-2 hidden md:col-span-2 md:inline-block md:my-5 pl-5">
+	<ul class="flex flex-col justify-center items-start list-none gap-2">
+
+	<% @sections.each do |section| %>
+		<li class="font-medium text-blue-500 text-lg">
+			<%= link_to section.title, "##{dom_id section}", class: "hover:underline" %>
+		</li>	
+	<% end %>
+
+	</ul>
+</div>

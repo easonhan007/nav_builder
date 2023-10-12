@@ -21,7 +21,7 @@ class Page < ApplicationRecord
 	scope :for_nav, -> { order('position ASC, created_at DESC').limit(10)}
 
 	def html_path
-		File.join(Rails.root, 'storage', "#{title.parameterize}.html")
+		File.join(Rails.root, 'storage', "#{slug.parameterize}.html")
 	end
 
 	def notify_all_pages_to_update_nav
