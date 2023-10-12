@@ -11,11 +11,12 @@
       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
         
         <% section.items.order('position ASC').each do |item| %>
-          <div class="h-24 flex flex-col items-start rounded p-3 border shadow-sm hover:scale-[1.01] transform overflow-hidden transition">
+          <div class="h-26 flex flex-col items-start rounded p-3 border shadow-sm hover:scale-[1.01] transform overflow-hidden transition">
             <%= link_to item.link_name.truncate(30), item.link_href, title: item.link_name,
-                        class: 'text-gray-800 mb-1 font-medium', target: '_blank' %>
-            <p class="text-gray-500 font-medium text-sm" title="<%= item.description %>">
-              <%= item.description.truncate(40) %>
+                        class: 'text-gray-800 mb-2 font-medium', target: '_blank' %>
+            <% desc = item.description.blank? ? item.link_name : item.description %>
+            <p class="text-gray-400 font-medium text-sm" title="<%= desc %>">
+              <%= desc.truncate(40)%>
             </p>
           </div>
         <% end %>

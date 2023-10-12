@@ -13,7 +13,7 @@ class Section < ApplicationRecord
 	include PagePersistenceNotification
 
   belongs_to :page
-  has_many :items
+  has_many :items, dependent: :destroy
 
   validates :title, presence: true
 

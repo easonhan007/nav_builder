@@ -11,7 +11,7 @@
 #  need_persistence :boolean          default(TRUE)
 #
 class Page < ApplicationRecord
-	has_many :sections
+	has_many :sections, dependent: :destroy
 
 	validates :title, :slug, presence: true
 	validates :slug, uniqueness: true

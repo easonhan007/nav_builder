@@ -33,7 +33,7 @@ class BatchItemRecord < ApplicationRecord
       if link
         link_href = link.attribute('href')
         link_text = link.content
-        desc = list_item.content.gsub(link_text, "").strip
+        desc = list_item.content.gsub(link_text, "").strip || link_text
         # Rails.logger.info("#{link_text}: #{link_href}, description: #{desc}")
         log_msg = "#{link_text} exists, just skip 🚀\n"
         if not Item.exists?(link_name: link_text, section_id: section_id)
