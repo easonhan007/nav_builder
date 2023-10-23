@@ -10,15 +10,15 @@ class HomeController < ApplicationController
     @sections = @page.sections.order('position ASC, created_at DESC')
     @title = @page.title
 
-    # if @page.need_persistence
-    #   raw_html = render_to_string('index')
-    #   persist(@page, raw_html)
-    # else
-    #   # Rails.logger.info(@page.html_path)
-    #   if File.exist?(@page.html_path)
-    #     render(file: @page.html_path, layout: false)
-    #   end 
-    # end #if
+    if @page.need_persistence
+      raw_html = render_to_string('index')
+      persist(@page, raw_html)
+    else
+      # Rails.logger.info(@page.html_path)
+      if File.exist?(@page.html_path)
+        render(file: @page.html_path, layout: false)
+      end 
+    end #if
   end
 
   private 

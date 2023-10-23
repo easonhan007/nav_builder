@@ -2,8 +2,8 @@
   <%= render('shared/outline') %>
   <div class="col-span-12 md:col-span-10 inline-block">
     <% @sections.each do |section| %>
-    <section class="my-5" id="<%= dom_id section %>">
-      <h3 class="font-semibold text-xl mt-2 mb-3">
+    <section class="mt-7" id="<%= dom_id section %>">
+      <h3 class="font-semibold text-xl mt-2 mb-2">
         <a href="#<%= dom_id section %>">
           <%= section.title %>
         </a>
