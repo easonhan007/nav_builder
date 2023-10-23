@@ -8,6 +8,8 @@
     <% if action_name != "show" %>
       <%= link_to "Show", item, class: "rounded py-3 px-3 bg-gray-100 inline-block font-medium text-sm" %>
       <%= link_to 'Edit', edit_item_path(item), class: "rounded py-3 ml-2 px-3 bg-gray-100 inline-block font-medium text-sm" %>
+      <%= link_to 'Destory', item_path(item), data: {turbo_method: 'delete'}, 
+        class: "rounded py-3 ml-2 px-3 bg-red-500 inline-block font-medium text-sm text-white" %>
     <% end %>
   </div>
 </div>
