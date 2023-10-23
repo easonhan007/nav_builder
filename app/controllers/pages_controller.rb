@@ -29,7 +29,7 @@ class PagesController < ApplicationController
     respond_to do |format|
       if @page.save
         @page.notify_all_pages_to_update_nav
-        format.html { redirect_to page_url(@page), notice: "Page was successfully created." }
+        format.html { redirect_to pages_url, notice: "Page was successfully created." }
         format.json { render :show, status: :created, location: @page }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -71,6 +71,6 @@ class PagesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def page_params
-      params.require(:page).permit(:title, :slug, :position)
+      params.require(:page).permit(:title, :slug, :position, :active)
     end
 end

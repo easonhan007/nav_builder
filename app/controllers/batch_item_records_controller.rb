@@ -32,7 +32,7 @@ class BatchItemRecordsController < ApplicationController
 
     respond_to do |format|
       if @batch_item_record.save
-        format.html { redirect_to batch_item_record_url(@batch_item_record), notice: "Batch item record was successfully created." }
+        format.html { redirect_to section_url(@batch_item_record.section), notice: "Batch item record was successfully created." }
         format.json { render :show, status: :created, location: @batch_item_record }
       else
         format.html { render :new, status: :unprocessable_entity }

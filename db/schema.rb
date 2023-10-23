@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_10_11_032342) do
+ActiveRecord::Schema[7.1].define(version: 2023_10_23_061321) do
   create_table "batch_item_records", force: :cascade do |t|
     t.integer "section_id", null: false
     t.text "content"
@@ -47,6 +47,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_10_11_032342) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "need_persistence", default: true
+    t.boolean "active", default: true
   end
 
   create_table "sections", force: :cascade do |t|

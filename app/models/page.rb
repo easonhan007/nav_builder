@@ -9,6 +9,7 @@
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
 #  need_persistence :boolean          default(TRUE)
+#  active           :boolean          default(TRUE)
 #
 class Page < ApplicationRecord
 	has_many :sections, dependent: :destroy
@@ -17,8 +18,9 @@ class Page < ApplicationRecord
 	validates :slug, uniqueness: true
 
 	scope :the_first_one, -> { order('position ASC, created_at DESC').limit(1)}
+	scope :valid, -> { where(active: true) }
 	# only allow display 10 items in the nav part
-	scope :for_nav, -> { order('position ASC, created_at DESC').limit(10)}
+	scope :for_nav, -> { valid.order('position ASC, created_at DESC').limit(10)}
 
 	def html_path
 		File.join(Rails.root, 'storage', "#{slug.parameterize}.html")

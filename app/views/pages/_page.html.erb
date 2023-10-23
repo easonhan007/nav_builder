@@ -1,5 +1,11 @@
 <div class="flex w-full flex-col my-5">
-  <h3 class="text-lg text-gray-800 my-2"><%= page.title%>
+  <% kls = 'text-lg text-gray-800 my-2' %>
+  
+  <% if not page.active %>
+    <% kls = "text-lg text-gray-500 my-2 line-through"%> 
+  <% end %>
+  
+  <h3 class="<%= kls %>"><%= page.title%>
     <small class="text-sm text-slate-500 mb-2"><%= page.slug%></small>
   </h3>
   <p class="mb-2 text-sm">Position: <%= page.position %></p>

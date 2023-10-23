@@ -39,6 +39,7 @@ docker run -d --rm -p 12306:3000 -v ./storage:/rails/storage --name nav_builder 
 
 ### TODO
 
+- Add a force refresh button for pages
 - A mobile friendly top nav
 - Fix section destroy issue
 - Custom js code per page

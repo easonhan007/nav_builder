@@ -9,6 +9,7 @@
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
 #  need_persistence :boolean          default(TRUE)
+#  active           :boolean          default(TRUE)
 #
 
 one:
